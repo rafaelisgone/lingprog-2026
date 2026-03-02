@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+
         //variavel do tipo String
         String nome = "Rafael";
 
@@ -14,9 +15,5 @@ public class Main {
         float imc = peso / (altura * altura);
 
         System.out.println(nome + " seu IMC é: " + imc + ".");
-        if (imc < 18.5f){
-            System.out.println("Seu peso está abaixo da média.");
-        }
-
     }
 }
