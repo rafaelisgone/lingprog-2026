@@ -14,7 +14,7 @@ public class Operacoes {
                 "1.Soma\n" +
                 "2.Subtração\n" +
                 "3.Divisão\n" +
-                "4.Multiplicação\n\n");
+                "4.Multiplicação\n");
 
         int opcao = entrada.nextInt();
         int res = 0;
@@ -23,22 +23,20 @@ public class Operacoes {
                 res = num + numdois;
                 System.out.println("\nA soma de " + num + " + " + numdois + " = " + res);
                 break;
-
             case 2:
                 res = num - numdois;
                 System.out.println("\nA subtração de " + num + " - " + numdois + " = " + res);
                 break;
-
             case 3:
                 res = num / numdois;
                 System.out.println("\nA divisão de " + num + " ÷ " + numdois + " = " + res);
                 break;
-
             case 4:
                 res = num * numdois;
                 System.out.println("\nA mutiplicação de " + num + " x " + numdois + " = " + res);
                 break;
+            default:
+                System.out.println("Operador inválido.");
         }
     }
-
 }

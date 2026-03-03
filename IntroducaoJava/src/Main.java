@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
 
+        //INTRODUÇÃO - ANOTAÇÕES
+
         //variavel do tipo String
         String nome = "Rafael";
 
