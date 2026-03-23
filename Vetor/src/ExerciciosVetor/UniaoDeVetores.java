@@ -2,7 +2,7 @@ package ExerciciosVetor;
 
 import java.util.Scanner;
 
-public class JuntaVetores {
+public class UniaoDeVetores {
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
 
@@ -26,11 +26,11 @@ public class JuntaVetores {
 
         // JUNTANDO OS VETORES
         for (int i = 0; i < v1.length; i++){
-            v3[i] = v1[i];
+            v3[i] = v1[i]; // FAZ O TERCEIRO VETOR RECEBER OS VALORES DO VETOR 1
         }
 
         for (int i = 0; i < v2.length; i++){
-            v3[i + v1.length] = v2[i];
+            v3[i + v1.length] = v2[i]; //FAZ O VETOR 3 RECEBER OS VALORES DO VETOR 2 COMEÇANDO PELA QUINTA GAVETA
         }
 
         // MOSTRAR RESULTADO

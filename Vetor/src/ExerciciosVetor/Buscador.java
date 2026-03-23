@@ -14,13 +14,13 @@ public class Buscador {
         }
 
         // BUSCA
-        System.out.print("\nQual nome deseja buscar? ");
+        System.out.println("\nQual nome deseja buscar? ");
         String busca = entrada.next();
 
         int pos = -1; // -1 significa "não encontrado"
 
         for(int i = 0; i < nome.length; i++){
-            if (busca.equals(nome[i])) {
+            if (busca.equalsIgnoreCase(nome[i])) { // EQUALS COMPARA STRINGS (BUSCA = NOME[I])
                 pos = i;
                 break; // para o loop quando encontra
             }
