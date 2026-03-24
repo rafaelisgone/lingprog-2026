@@ -3,33 +3,38 @@ package ExerciciosVetor;
 import java.util.Scanner;
 
 public class OrdemCrescente {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int[] num = new int[5];
+        int[] numeros = new int[5];
 
-        // LEITURA DOS NÚMEROS
-        for (int i = 0; i < num.length; i++){
-            System.out.print("Digite o "+ (i + 1) +"º número: ");
-            num[i] = entrada.nextInt();
+        // 1. Entrada de dados
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("Digite o " + (i + 1) + "º número: ");
+            numeros[i] = entrada.nextInt();
         }
 
-        // BUBBLE SORT
-        for (int i = 0; i < num.length - 1; i++){
-            for (int j = 0; j < num.length - 1; j++){
+        // 2. O Algoritmo Bubble Sort
+        // O primeiro 'for' controla quantas passadas daremos no vetor
+        for (int i = 0; i < numeros.length - 1; i++) {
 
-                if (num[j] > num[j + 1]){
-                    // troca
-                    int temp = num[j];
-                    num[j] = num[j + 1];
-                    num[j + 1] = temp;
+            // O segundo 'for' faz as comparações entre vizinhos
+            for (int j = 0; j < numeros.length - 1 - i; j++) {
+
+                // Se o atual for MAIOR que o próximo, eles trocam!
+                if (numeros[j] > numeros[j + 1]) {
+
+                    // A "Troca de Copos" (Variável Auxiliar)
+                    int aux = numeros[j];
+                    numeros[j] = numeros[j + 1];
+                    numeros[j + 1] = aux;
                 }
             }
         }
 
-        // EXIBIÇÃO
-        System.out.println("\nNúmeros em ordem crescente:");
-        for (int i = 0; i < num.length; i++){
-            System.out.print(num[i] + " ");
+        // 3. Exibição do vetor ordenado
+        System.out.println("\n--- VETOR EM ORDEM CRESCENTE ---");
+        for (int num : numeros) {
+            System.out.print(num + " ");
         }
     }
 }

@@ -18,12 +18,12 @@ public class Salarios {
 
         // CÁLCULO DA MÉDIA
         double media = soma / salarios.length;
-
         int iguais = 0;
         int acima = 0;
         int abaixo = 0;
 
         // COMPARAÇÃO COM A MÉDIA
+        // PERCORRE O VETOR NOVAMENTE PARA COMPARAR COM A MÉDIA
         for (int i = 0; i < salarios.length; i++){
             if (salarios[i] == media){
                 iguais++;

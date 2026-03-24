@@ -30,13 +30,13 @@ public class UniaoDeVetores {
         }
 
         for (int i = 0; i < v2.length; i++){
-            v3[i + v1.length] = v2[i]; //FAZ O VETOR 3 RECEBER OS VALORES DO VETOR 2 COMEÇANDO PELA QUINTA GAVETA
+            v3[i + v1.length] = v2[i]; //FAZ O VETOR 3 RECEBER OS VALORES DO VETOR 2 COMEÇANDO PELA QUINTA POSIÇÃO
         }
 
         // MOSTRAR RESULTADO
         System.out.println("\nVetor resultante:");
-        for (int i = 0; i < v3.length; i++){
-            System.out.print(v3[i] + " ");
+        for (int num: v3){ // SUBSTITUI "for (int i = 0; i < v3.length; i++)"
+            System.out.print(num + " ");
         }
     }
 }

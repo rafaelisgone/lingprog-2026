@@ -3,35 +3,42 @@ package ExerciciosVetor;
 import java.util.Scanner;
 
 public class ControleEstoque {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        String[] produtos = new String[5];
-        int[] estoque = new int[5];
+        // 1. Declaração de vetores paralelos
+        String[] nomes = new String[5];
+        int[] quantidades = new int[5];
 
-        // LEITURA DOS DADOS
-        for (int i = 0; i < 5; i++){
-            System.out.print("Digite o nome do produto: ");
-            produtos[i] = entrada.next();
+        System.out.println("--- CADASTRO DE PRODUTOS ---");
 
-            System.out.print("Digite a quantidade em estoque: ");
-            estoque[i] = entrada.nextInt();
+        // 2. Preenchimento dos dados
+        for (int i = 0; i < nomes.length; i++) {
+            System.out.print("\nNome do produto " + (i + 1) + ": ");
+            nomes[i] = entrada.next();
+
+            System.out.print("Quantidade em estoque de " + nomes[i] + ": ");
+            quantidades[i] = entrada.nextInt();
         }
 
-        // VERIFICAR ESTOQUE CRÍTICO
-        System.out.println("\nProdutos com estoque crítico (menos de 5):");
+        // 3. Processamento e Filtro (Estoque Crítico)
+        System.out.println("\n----------------------------------");
+        System.out.println("ALERTA: PRODUTOS COM ESTOQUE CRÍTICO");
+        System.out.println("(Menos de 5 unidades)");
+        System.out.println("----------------------------------");
 
-        boolean encontrou = false;
+        boolean temCritico = false;
 
-        for (int i = 0; i < 5; i++){
-            if (estoque[i] < 5){
-                System.out.println(produtos[i] + " - Quantidade: " + estoque[i]);
-                encontrou = true;
+        for (int i = 0; i < quantidades.length; i++) {
+            // Verificamos a quantidade, mas usamos o nome correspondente
+            if (quantidades[i] < 5) {
+                System.out.println("-> " + nomes[i] + ": apenas " + quantidades[i] + " unidades.");
+                temCritico = true;
             }
         }
 
-        if (!encontrou){
-            System.out.println("Nenhum produto com estoque crítico.");
+        if (!temCritico) {
+            System.out.println("Tudo em ordem! Nenhum item abaixo do limite.");
         }
     }
 }
