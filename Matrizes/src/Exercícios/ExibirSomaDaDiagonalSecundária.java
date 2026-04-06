@@ -28,11 +28,12 @@ public class ExibirSomaDaDiagonalSecundária {
 
         // DIAGONAL
         int soma = 0;
+
         System.out.print("\n\n");
-        System.out.println("DIAGONAL PRINCIPAL:");
+        System.out.println("DIAGONAL SECUNDÁRIA:");
         for (int i = 0; i < mat.length; i++){
             for (int j = 0; j < mat[i].length; j++){
-                if (i == j){
+                if (i + j == n - 1){
                     System.out.print(mat[i][j]+ "  ");
                     soma += mat[i][j];
                 }
@@ -40,6 +41,6 @@ public class ExibirSomaDaDiagonalSecundária {
         }
 
         //SOMA
-        System.out.println("\nA soma dos elementos da diagonal principal é: "+ soma);
+        System.out.println("\nA soma dos elementos da diagonal secundária é: "+ soma);
     }
 }
