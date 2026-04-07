@@ -2,7 +2,7 @@ package ExerciciosVetor;
 
 import java.util.Scanner;
 
-public class ControleEstoque {
+public class SistemaEstoque {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 

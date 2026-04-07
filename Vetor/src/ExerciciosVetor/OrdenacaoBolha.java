@@ -2,7 +2,7 @@ package ExerciciosVetor;
 
 import java.util.Scanner;
 
-public class OrdemCrescente {
+public class OrdenacaoBolha {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int[] numeros = new int[5];

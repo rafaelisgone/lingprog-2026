@@ -2,7 +2,7 @@ package ExerciciosVetor;
 
 import java.util.Scanner;
 
-public class FibonnaciVetor {
+public class VetorFibonacci {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 

@@ -2,7 +2,7 @@ package ExerciciosVetor;
 
 import java.util.Scanner;
 
-public class UniaoDeVetores {
+public class UniaoVetores {
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
 

@@ -2,17 +2,19 @@ package ExerciciosVetor;
 
 import java.util.Scanner;
 
-public class Buscador {
-    public static void main(String[] args){
-        Scanner entrada = new Scanner(System.in);
-        String[] nome = new String[10];
+public class BuscadorNomes {
 
+    public static void leitura (String[] nome){
+        Scanner entrada = new Scanner(System.in);
         // LEITURA
         for (int i = 0; i < nome.length; i++){
             System.out.print("Digite o "+ (i + 1) +"º nome: ");
             nome[i] = entrada.next();
         }
+    }
 
+    public static void busca (String[] nome){
+        Scanner entrada = new Scanner(System.in);
         // BUSCA
         System.out.println("\nQual nome deseja buscar? ");
         String busca = entrada.next();
@@ -32,5 +34,12 @@ public class Buscador {
         } else {
             System.out.println("Nome não encontrado.");
         }
+    }
+
+
+    public static void main(String[] args){
+        String[] nome = new String[10];
+        leitura(nome);
+        busca(nome);
     }
 }

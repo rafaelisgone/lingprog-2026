@@ -2,7 +2,7 @@ package ExerciciosVetor;
 
 import java.util.Scanner;
 
-public class SubstituiçãoValores {
+public class SubstituicaoValores {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int[] num = new int[10];
