@@ -3,40 +3,47 @@ package ExerciciosVetor;
 import java.util.Scanner;
 
 public class UniaoVetores {
+
+    public static void lerVetor(int[] v, Scanner entrada, String nome){
+        System.out.println(nome + ":");
+        for (int i = 0; i < v.length; i++){
+            System.out.print("Digite o " + (i + 1) + "º número: ");
+            v[i] = entrada.nextInt();
+        }
+    }
+
+    public static int[] unirVetores(int[] v1, int[] v2){
+        int[] v3 = new int[v1.length + v2.length];
+
+        for (int i = 0; i < v1.length; i++){
+            v3[i] = v1[i];
+        }
+
+        for (int i = 0; i < v2.length; i++){
+            v3[i + v1.length] = v2[i];
+        }
+
+        return v3;
+    }
+
+    public static void mostrarVetor(int[] v){
+        System.out.println("\nVetor resultante:");
+        for (int num : v){
+            System.out.print(num + " ");
+        }
+    }
+
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
 
         int[] v1 = new int[5];
         int[] v2 = new int[5];
-        int[] v3 = new int[10];
 
-        // LEITURA DO VETOR 1
-        System.out.println("VETOR 1:");
-        for (int i = 0; i < v1.length; i++){
-            System.out.print("Digite o "+ (i + 1) +"º número: ");
-            v1[i] = entrada.nextInt();
-        }
+        lerVetor(v1, entrada, "VETOR 1");
+        lerVetor(v2, entrada, "\nVETOR 2");
 
-        // LEITURA DO VETOR 2
-        System.out.println("\nVETOR 2:");
-        for (int i = 0; i < v2.length; i++){
-            System.out.print("Digite o "+ (i + 1) +"º número: ");
-            v2[i] = entrada.nextInt();
-        }
+        int[] v3 = unirVetores(v1, v2);
 
-        // JUNTANDO OS VETORES
-        for (int i = 0; i < v1.length; i++){
-            v3[i] = v1[i]; // FAZ O TERCEIRO VETOR RECEBER OS VALORES DO VETOR 1
-        }
-
-        for (int i = 0; i < v2.length; i++){
-            v3[i + v1.length] = v2[i]; //FAZ O VETOR 3 RECEBER OS VALORES DO VETOR 2 COMEÇANDO PELA QUINTA POSIÇÃO
-        }
-
-        // MOSTRAR RESULTADO
-        System.out.println("\nVetor resultante:");
-        for (int num: v3){ // SUBSTITUI "for (int i = 0; i < v3.length; i++)"
-            System.out.print(num + " ");
-        }
+        mostrarVetor(v3);
     }
 }

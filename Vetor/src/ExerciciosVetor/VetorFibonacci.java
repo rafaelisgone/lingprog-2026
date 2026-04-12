@@ -3,17 +3,15 @@ package ExerciciosVetor;
 import java.util.Scanner;
 
 public class VetorFibonacci {
-    public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
 
+    public static int lerQuantidade(Scanner entrada){
         System.out.print("Quantos termos da sequência de Fibonacci você deseja guardar? ");
-        int n = entrada.nextInt();
+        return entrada.nextInt();
+    }
 
-        // 1. Criando o vetor com o tamanho que o usuário escolheu
+    public static int[] gerarFibonacci(int n){
         int[] fibo = new int[n];
 
-        // 2. Casos base: Os dois primeiros números são sempre 0 e 1
-        // Precisamos tratar o caso de n ser 1 ou maior que 1
         if (n >= 1) {
             fibo[0] = 0;
         }
@@ -21,16 +19,26 @@ public class VetorFibonacci {
             fibo[1] = 1;
         }
 
-        // 3. Preenchendo o restante do vetor (começando do índice 2)
-        // Cada posição é a soma das duas anteriores
         for (int i = 2; i < n; i++) {
             fibo[i] = fibo[i - 1] + fibo[i - 2];
         }
 
-        // 4. Exibindo o vetor completo
+        return fibo;
+    }
+
+    public static void mostrarVetor(int[] v){
         System.out.println("\n--- VETOR DE FIBONACCI GERADO ---");
-        for (int i = 0; i < n; i++) {
-            System.out.print("[" + fibo[i] + "] ");
+        for (int num : v){
+            System.out.print("[" + num + "] ");
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        int n = lerQuantidade(entrada);
+        int[] fibo = gerarFibonacci(n);
+
+        mostrarVetor(fibo);
     }
 }

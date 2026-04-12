@@ -3,36 +3,71 @@ package ExerciciosVetor;
 import java.util.Scanner;
 
 public class Salarios {
-    public static void main(String[] args){
+
+    public static void lerSalarios(double[] salarios){
         Scanner entrada = new Scanner(System.in);
 
-        double[] salarios = new double[5];
+        for (int i = 0; i < salarios.length; i++){
+            System.out.print("Digite o salário do " + (i + 1) + "º funcionário: ");
+            salarios[i] = entrada.nextDouble();
+        }
+    }
+
+    public static double calcularMedia(double[] salarios){
         double soma = 0;
 
-        // LEITURA DOS SALÁRIOS
         for (int i = 0; i < salarios.length; i++){
-            System.out.print("Digite o salário do "+ (i + 1) +"º funcionário: ");
-            salarios[i] = entrada.nextDouble();
             soma += salarios[i];
         }
 
-        // CÁLCULO DA MÉDIA
-        double media = soma / salarios.length;
-        int iguais = 0;
-        int acima = 0;
-        int abaixo = 0;
+        return soma / salarios.length;
+    }
 
-        // COMPARAÇÃO COM A MÉDIA
-        // PERCORRE O VETOR NOVAMENTE PARA COMPARAR COM A MÉDIA
+    public static int contarIguais(double[] salarios, double media){
+        int count = 0;
+
         for (int i = 0; i < salarios.length; i++){
             if (salarios[i] == media){
-                iguais++;
-            } else if (salarios[i] > media){
-                acima++;
-            } else {
-                abaixo++;
+                count++;
             }
         }
+
+        return count;
+    }
+
+    public static int contarAcima(double[] salarios, double media){
+        int count = 0;
+
+        for (int i = 0; i < salarios.length; i++){
+            if (salarios[i] > media){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static int contarAbaixo(double[] salarios, double media){
+        int count = 0;
+
+        for (int i = 0; i < salarios.length; i++){
+            if (salarios[i] < media){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args){
+        double[] salarios = new double[5];
+
+        lerSalarios(salarios);
+
+        double media = calcularMedia(salarios);
+        int iguais = contarIguais(salarios, media);
+        int acima = contarAcima(salarios, media);
+        int abaixo = contarAbaixo(salarios, media);
 
         // RESULTADO
         System.out.println("\nMédia salarial: " + media);

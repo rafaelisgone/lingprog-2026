@@ -35,8 +35,6 @@ public class BuscadorNomes {
             System.out.println("Nome não encontrado.");
         }
     }
-
-
     public static void main(String[] args){
         String[] nome = new String[10];
         leitura(nome);

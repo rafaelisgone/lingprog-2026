@@ -3,16 +3,17 @@ package ExerciciosVetor;
 import java.util.Scanner;
 
 public class OrdenacaoBolha {
-    public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        int[] numeros = new int[5];
 
+    public static void entradaDados (int[] numeros){
         // 1. Entrada de dados
+        Scanner entrada = new Scanner(System.in);
         for (int i = 0; i < numeros.length; i++) {
             System.out.print("Digite o " + (i + 1) + "º número: ");
             numeros[i] = entrada.nextInt();
         }
+    }
 
+    public static void bubbleSort (int[] numeros){
         // 2. O Algoritmo Bubble Sort
         // O primeiro 'for' controla quantas passadas daremos no vetor
         for (int i = 0; i < numeros.length - 1; i++) {
@@ -30,11 +31,19 @@ public class OrdenacaoBolha {
                 }
             }
         }
+    }
 
+    public static void exibicao (int[] numeros){
         // 3. Exibição do vetor ordenado
         System.out.println("\n--- VETOR EM ORDEM CRESCENTE ---");
         for (int num : numeros) {
             System.out.print(num + " ");
         }
+    }
+    public static void main(String[] args) {
+        int[] numeros = new int[5];
+        entradaDados(numeros);
+        bubbleSort(numeros);
+        exibicao(numeros);
     }
 }
