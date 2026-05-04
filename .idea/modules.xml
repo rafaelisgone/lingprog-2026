@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EstruturaDeRepeticao/EstruturaDeRepeticao.iml" filepath="$PROJECT_DIR$/EstruturaDeRepeticao/EstruturaDeRepeticao.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercicios/Exercicios.iml" filepath="$PROJECT_DIR$/Exercicios/Exercicios.iml" />
       <module fileurl="file://$PROJECT_DIR$/Funcoes/Funcoes.iml" filepath="$PROJECT_DIR$/Funcoes/Funcoes.iml" />
       <module fileurl="file://$PROJECT_DIR$/IntroducaoJava/IntroducaoJava.iml" filepath="$PROJECT_DIR$/IntroducaoJava/IntroducaoJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/Matrizes/Matrizes.iml" filepath="$PROJECT_DIR$/Matrizes/Matrizes.iml" />
